@@ -1,0 +1,4 @@
+src/sass/font-awesome.scss
+src/sass/abstracts/_transition.scss
+src/sass/abstracts/_rem.scss
+src/sass/base/_normalize&reset.scss

@@ -1,0 +1,102 @@
+.contact-list {
+    @include rem((
+        min-width: 283px,
+    ));
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $black-and-opacity-7;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: $first-color;
+    }
+
+    &__icon {
+        @include rem((
+            margin-right: 12px,
+            line-height: 15px
+        ));
+    }
+
+    &__text {
+        @include rem((
+            font-family: $secondary-font,
+            line-height: 15px
+        ));
+    }
+}
+
+.quick-contact-info {
+    & .contact-list {
+        @include rem((
+            padding: 0 20px
+        ));
+        @include transition(padding height opacity transform);
+
+        height: 0;
+        opacity: 0;
+        transform: translateY(0);
+
+        &__item {
+            @include transition(padding-bottom);
+
+            padding-bottom: 0;
+        }
+
+        &__icon, &__text {
+            @include transition(height opacity);
+
+            height: 0;
+            opacity: 0;
+
+            &::before {
+                @include transition(height opacity font-size);
+
+                height: 0;
+                font-size: 0;
+                opacity: 0;
+            }
+        }
+    }
+
+    &:hover {
+        & .contact-list {
+            @include rem((
+                padding: 20px
+            ));
+
+            height: auto;
+            opacity: 1;
+
+            &__item {
+                &:not(:last-child) {
+                    @include rem((
+                        padding-bottom: 20px
+                    ));
+                }
+            }
+
+            &__icon, &__text {
+                @include rem((
+                    font-size: 16px
+                ));
+
+                height: auto;
+                opacity: 1;
+
+                &::before {
+                    @include rem((
+                        font-size: 16px
+                    ));
+
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

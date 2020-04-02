@@ -1,0 +1,9 @@
+.copyright {
+    @include rem((
+        padding-bottom: 24px,
+        margin: 0 24px
+    ));
+
+    display: flex;
+    justify-content: flex-end;
+}

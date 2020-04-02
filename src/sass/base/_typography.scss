@@ -1,0 +1,84 @@
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h5 {
+    @include rem((
+        font-size: 19px,
+        line-height: 32px,
+        text-shadow: $text-shadow
+    ));
+
+    font-family: $secondary-font;
+    color: $third-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    &[class^='navigation'], &[class^='filter'] {
+        & a {
+            &[class*='link'] {
+                @include rem((
+                    text-shadow: $text-shadow
+                ));
+
+                font-family: $main-font;
+            }
+        }
+    }
+
+    &[class^='navigation'] {
+        & a {
+            &[class*='link'] {
+                @include rem((
+                    font-size: 18px,
+                    line-height: 32px,
+                ));
+
+                color: $first-color;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &[class^='filter'] {
+        & a {
+            &[class*='link'] {
+                @include rem((
+                    font-size: 13px,
+                    line-height: 24px,
+                ));
+                @include transition(color);
+
+                color: $fourth-color;
+
+                &:hover, &[class$='active'] {
+                    color: $first-color;
+                }
+            }
+        }
+    }
+}
+
+p {
+    &[class^='copyright'] {
+        @include rem((
+            font-size: 12px,
+            line-height: 25px
+        ));
+
+        font-family: $secondary-font;
+        color: $fourth-color;
+    }
+}

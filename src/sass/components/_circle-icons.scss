@@ -1,0 +1,55 @@
+.fa {
+    &-bars, &-times {
+        position: absolute;
+        left: 0;
+    }
+
+    &-info-circle {
+        position: fixed;
+        right: 0;
+        display: flex;
+    }
+
+    &-bars, &-times, &-info-circle {
+        @include rem((
+            width: 90px,
+            height: 90px
+        ));
+
+        top: 0;
+        z-index: 10;
+    }
+
+    &-bars, &-times, &-info-circle, &-arrow-right {
+        align-items: center;
+        justify-content: center;
+        color: $first-color;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+
+        &::before {
+            @include rem((
+                width: 23px,
+                height: 23px,
+                padding: 17px,
+                font-size: 23px,
+                border: 1px solid $first-color,
+            ));
+            @include transition(content transform);
+
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        &:hover {
+            &::before {
+                transform: scale(.9, .9);
+            }
+        }
+    }
+}
+
+.burger, .quick-contact-info {
+    background-color: $java-and-opacity-9;
+}

@@ -1,0 +1,47 @@
+$rem-fallback: true;
+
+$main-font: 'roboto-light', sans-serif;
+$secondary-font: 'roboto-thin', sans-serif;
+
+$max-width-header: 300px;
+
+$max-screen-sm: 767px;
+$max-screen-md: 991px;
+
+$screen-md: 768px;
+$screen-lg: 992px;
+
+$white: #fff;
+$black: #000;
+$java: #1ab5b3;
+$nevada: #6b7072;
+$shark: #202426;
+$limed-spruce: #364048;
+$outer-space-first: #2f373b;
+$outer-space-second: #1e282b;
+$outer-space-third: #242b2e;
+
+$black-and-opacity-02: rgba(0, 0, 0, .02);
+$black-and-opacity-1: rgba(0, 0, 0, .1);
+$black-and-opacity-2: rgba(0, 0, 0, .2);
+$black-and-opacity-6: rgba(0, 0, 0, .6);
+$black-and-opacity-7: rgba(0, 0, 0, .7);
+
+$white-and-opacity-02: rgba(255, 255, 255, .02);
+$white-and-opacity-1: rgba(255, 255, 255, .1);
+
+$java-and-opacity-9: rgba(26, 181, 179, .9);
+
+$first-color: $white;
+$second-color: $black;
+$third-color: $java;
+$fourth-color: $nevada;
+$fifth-color: $shark;
+$sixth-color: $limed-spruce;
+$seventh-color: $outer-space-first;
+$eighth-color: $outer-space-second;
+$ninth-color: $outer-space-third;
+
+$text-shadow: 1px 1px 4px $black-and-opacity-2;
+
+$box-shadow: 0 0 51px $black-and-opacity-6;

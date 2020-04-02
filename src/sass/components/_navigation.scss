@@ -1,0 +1,38 @@
+.navigation {
+    &__item {
+        display: flex;
+    }
+
+    &__link {
+        @include rem((
+            padding: 15px 24px
+        ));
+        @include transition(background-color background-image);
+
+        position: relative;
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        background-color: $seventh-color;
+        background-image: linear-gradient(to top, $black-and-opacity-02 0%, $white-and-opacity-02 100%);
+
+        &--active, &:hover {
+            background-color: $third-color;
+            background-image: linear-gradient(to top, $black-and-opacity-1 0%, $white-and-opacity-1 100%);
+        }
+
+        &::after {
+            @include rem((
+                height: 1px
+            ));
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            content: '';
+            background-color: $black-and-opacity-1;
+        }
+    }
+}

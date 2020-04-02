@@ -1,0 +1,32 @@
+.social-icons {
+    @include rem((
+        padding: 28px 0 23px,
+        margin: 0 24px
+    ));
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__item {
+        &:not(:first-child) {
+            @include rem((
+                margin-left: 10px
+            ));
+        }
+    }
+
+    &__icon {
+        @include rem((
+            font-size: 24px
+        ));
+        @include transition(color);
+
+        color: $fourth-color;
+
+        &:hover {
+            color: $first-color;
+        }
+    }
+}

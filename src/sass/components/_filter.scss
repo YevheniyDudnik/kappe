@@ -1,0 +1,54 @@
+.filter {
+    @include rem((
+        padding: 24px 0 30px,
+        margin: 0 24px
+    ));
+
+    position: relative;
+
+    &::after {
+        @include rem((
+            height: 1px
+        ));
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: '';
+        background-color: $eighth-color;
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        @include rem ((
+            margin-right: 12px
+        ));
+    }
+
+    &__icon {
+        @include rem((
+            font-size: 18px,
+            line-height: 32px
+        ));
+
+        color: $third-color;
+    }
+
+    &__list {
+        @include rem((
+            padding-top: 22px
+        ));
+    }
+
+    &__item {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

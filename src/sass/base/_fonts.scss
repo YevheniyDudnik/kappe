@@ -1,0 +1,27 @@
+// -- Roboto Light -- //
+@font-face {
+    font-family: 'roboto-light';
+    src: url('../fonts/roboto/roboto-light.eot');
+    src: url('../fonts/roboto/roboto-light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/roboto-light.woff2') format('woff2'),
+        url('../fonts/roboto/roboto-light.woff') format('woff'),
+        url('../fonts/roboto/roboto-light.ttf') format('truetype'),
+        url('../fonts/roboto/roboto-light.svg#roboto-light') format('svg');
+    font-style: normal;
+    font-weight: 300;
+}
+// -- / Roboto Light / -- //
+
+// -- Roboto Thin -- //
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('../fonts/roboto/roboto-thin.eot');
+    src: url('../fonts/roboto/roboto-thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/roboto-thin.woff2') format('woff2'),
+        url('../fonts/roboto/roboto-thin.woff') format('woff'),
+        url('../fonts/roboto/roboto-thin.ttf') format('truetype'),
+        url('../fonts/roboto/roboto-thin.svg#roboto-thin') format('svg');
+    font-style: normal;
+    font-weight: 100;
+}
+// -- / Roboto Thin / -- //
