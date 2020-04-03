@@ -55,7 +55,12 @@ function filterPortfolio() {
     // init Isotope
     var $portfolio = $('.portfolio').isotope({
         itemSelector: '.portfolio__item',
-        layoutMode: 'fitRows'
+        layoutMode: 'masonry',
+        transitionDuration: '0.5s',
+        masonry: {
+            columnWidth: 405,
+            fitWidth: true
+        }
     });
     // bind filter link click
     $('.filter__list').on( 'click', 'a', function() {
