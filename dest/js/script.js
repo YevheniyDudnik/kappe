@@ -1,6 +1,7 @@
 $(document).ready(function() {
     openBurgerMobile();
     initHolderBgPortfolio('.portfolio');
+    filterPortfolio();
 });
 
 $(window).resize(function() {
@@ -47,5 +48,26 @@ function initHolderBgPortfolio(element) {
                 });
             img.remove();
         }
+    });
+}
+
+function filterPortfolio() {
+    // init Isotope
+    var $portfolio = $('.portfolio').isotope({
+        itemSelector: '.portfolio__item',
+        layoutMode: 'fitRows'
+    });
+    // bind filter link click
+    $('.filter__list').on( 'click', 'a', function() {
+        var filterValue = $( this ).attr('data-filter');
+        $portfolio.isotope({ filter: filterValue });
+    });
+    // change active class on links
+    $('.filter__group').each( function( i, filterGroup ) {
+        var $filterGroup = $( filterGroup );
+        $filterGroup.on( 'click', 'a', function() {
+            $filterGroup.find('.filter__link--active').removeClass('filter__link--active');
+            $( this ).addClass('filter__link--active');
+        });
     });
 }
