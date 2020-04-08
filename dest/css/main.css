@@ -527,7 +527,6 @@ p[class^='copyright'] {
     -o-transition: content 0.5s ease 0s , transform 0.5s ease 0s;
     transition: content 0.5s ease 0s , transform 0.5s ease 0s;
     transition: content 0.5s ease 0s , transform 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
-    text-align: center;
     border-radius: 50%;
 }
 
@@ -756,16 +755,6 @@ p[class^='copyright'] {
     margin: 0 auto;
 }
 
-.portfolio__item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    max-width: 405px;
-    height: 311px;
-}
-
 .portfolio__info {
     -webkit-transition: opacity 0.5s ease 0s;
     -o-transition: opacity 0.5s ease 0s;
@@ -800,6 +789,7 @@ p[class^='copyright'] {
     line-height: 1.875rem;
     font-family: "roboto-light", sans-serif;
     color: #fff;
+    text-align: center;
 }
 
 .portfolio__info--title {
@@ -825,9 +815,12 @@ p[class^='copyright'] {
     height: 1px;
     height: 0.0625rem;
     position: absolute;
+    right: 0;
     bottom: 0;
+    left: 0;
     display: block;
     width: 100%;
+    margin: 0 auto;
     content: '';
     background-color: #fff;
 }
@@ -867,6 +860,20 @@ p[class^='copyright'] {
             flex-grow: 1;
 }
 
+.portfolio__item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    max-width: 405px;
+    height: 311px;
+}
+
+.portfolio__item:hover .portfolio__info {
+    opacity: 1;
+}
+
 .portfolio--wrapper-inner {
     display: -webkit-box;
     display: -webkit-flex;
@@ -876,10 +883,6 @@ p[class^='copyright'] {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-}
-
-.portfolio--wrapper-inner:hover .portfolio__info {
-    opacity: 1;
 }
 
 .contact-list {
@@ -924,12 +927,13 @@ p[class^='copyright'] {
 .quick-contact-info .contact-list {
     padding: 0 20px;
     padding: 0 1.25rem;
-    -webkit-transition: padding 0.5s ease 0s , height 0.5s ease 0s , opacity 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
-    transition: padding 0.5s ease 0s , height 0.5s ease 0s , opacity 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
-    -o-transition: padding 0.5s ease 0s , height 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s;
-    transition: padding 0.5s ease 0s , height 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s;
-    transition: padding 0.5s ease 0s , height 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
+    -webkit-transition: padding 0.5s ease 0s , height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
+    transition: padding 0.5s ease 0s , height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
+    -o-transition: padding 0.5s ease 0s , height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s;
+    transition: padding 0.5s ease 0s , height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s;
+    transition: padding 0.5s ease 0s , height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s , transform 0.5s ease 0s , -webkit-transform 0.5s ease 0s;
     height: 0;
+    visibility: hidden;
     opacity: 0;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -952,17 +956,18 @@ p[class^='copyright'] {
 }
 
 .quick-contact-info .contact-list__icon::before, .quick-contact-info .contact-list__text::before {
-    -webkit-transition: height 0.5s ease 0s , opacity 0.5s ease 0s , font-size 0.5s ease 0s;
-    -o-transition: height 0.5s ease 0s , opacity 0.5s ease 0s , font-size 0.5s ease 0s;
-    transition: height 0.5s ease 0s , opacity 0.5s ease 0s , font-size 0.5s ease 0s;
+    -webkit-transition: height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s;
+    -o-transition: height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s;
+    transition: height 0.5s ease 0s , visibility 0.5s ease 0s , opacity 0.5s ease 0s;
     height: 0;
-    font-size: 0;
+    visibility: hidden;
     opacity: 0;
 }
 
 .quick-contact-info:hover .contact-list {
     padding: 20px;
     padding: 1.25rem;
+    visibility: visible;
     height: auto;
     opacity: 1;
 }
@@ -983,6 +988,7 @@ p[class^='copyright'] {
     font-size: 16px;
     font-size: 1rem;
     height: auto;
+    visibility: visible;
     opacity: 1;
 }
 
@@ -1028,11 +1034,15 @@ p[class^='copyright'] {
         width: 5.625rem;
         height: 90px;
         height: 5.625rem;
-        -webkit-transition: width 0.5s ease 0s , height 0.5s ease 0s;
-        -o-transition: width 0.5s ease 0s , height 0.5s ease 0s;
-        transition: width 0.5s ease 0s , height 0.5s ease 0s;
+        -webkit-transition: width 0.5s ease 0s , height 0.5s ease 0s , -webkit-box-shadow 0.5s ease 0s;
+        transition: width 0.5s ease 0s , height 0.5s ease 0s , -webkit-box-shadow 0.5s ease 0s;
+        -o-transition: width 0.5s ease 0s , height 0.5s ease 0s , box-shadow 0.5s ease 0s;
+        transition: width 0.5s ease 0s , height 0.5s ease 0s , box-shadow 0.5s ease 0s;
+        transition: width 0.5s ease 0s , height 0.5s ease 0s , box-shadow 0.5s ease 0s , -webkit-box-shadow 0.5s ease 0s;
     }
     .header--wrapper-inner {
+        margin-top: 90px;
+        margin-top: 5.625rem;
         -webkit-transition: -webkit-transform 0.5s ease 0s;
         transition: -webkit-transform 0.5s ease 0s;
         -o-transition: transform 0.5s ease 0s;
@@ -1045,10 +1055,10 @@ p[class^='copyright'] {
     .header--open {
         max-width: 300px;
         max-width: 18.75rem;
-        -webkit-box-shadow: 0 0 51px rgba(0, 0, 0, 0.6);
-                box-shadow: 0 0 51px rgba(0, 0, 0, 0.6);
-        -webkit-box-shadow: 0 0 3.1875rem rgba(0, 0, 0, 0.6);
-                box-shadow: 0 0 3.1875rem rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 121px 51px 0 rgba(0, 0, 0, 0.6);
+                box-shadow: 0 121px 51px 0 rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 7.5625rem 3.1875rem 0 rgba(0, 0, 0, 0.6);
+                box-shadow: 0 7.5625rem 3.1875rem 0 rgba(0, 0, 0, 0.6);
         width: 100%;
         height: 100%;
     }
@@ -1067,6 +1077,24 @@ p[class^='copyright'] {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+    }
+    .portfolio {
+        margin-top: 90px;
+        margin-top: 5.625rem;
+        width: 100% !important;
+    }
+    .portfolio__item {
+        max-width: 100%;
+    }
+    .content::after {
+        height: 90px;
+        height: 5.625rem;
+        position: fixed;
+        top: 0;
+        display: block;
+        width: 100%;
+        content: '';
+        background-color: rgba(0, 0, 0, 0.6);
     }
 }
 
@@ -1104,7 +1132,6 @@ p[class^='copyright'] {
 }
 
 .content {
-    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

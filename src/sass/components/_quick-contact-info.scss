@@ -35,9 +35,10 @@
         @include rem((
             padding: 0 20px
         ));
-        @include transition(padding height opacity transform);
+        @include transition(padding height visibility opacity transform);
 
         height: 0;
+        visibility: hidden;
         opacity: 0;
         transform: translateY(0);
 
@@ -54,10 +55,10 @@
             opacity: 0;
 
             &::before {
-                @include transition(height opacity font-size);
+                @include transition(height visibility opacity);
 
                 height: 0;
-                font-size: 0;
+                visibility: hidden;
                 opacity: 0;
             }
         }
@@ -69,6 +70,7 @@
                 padding: 20px
             ));
 
+            visibility: visible;
             height: auto;
             opacity: 1;
 
@@ -94,6 +96,7 @@
                     ));
 
                     height: auto;
+                    visibility: visible;
                     opacity: 1;
                 }
             }

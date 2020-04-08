@@ -2,6 +2,7 @@ $(document).ready(function() {
     openBurgerMobile();
     initHolderBgPortfolio('.portfolio');
     filterPortfolio();
+    dotPortfolioInfo();
 });
 
 $(window).resize(function() {
@@ -74,5 +75,20 @@ function filterPortfolio() {
             $filterGroup.find('.filter__link--active').removeClass('filter__link--active');
             $( this ).addClass('filter__link--active');
         });
+    });
+}
+
+function dotPortfolioInfo() {
+    let portfolioTitle = $('.portfolio__info--title');
+    let portfolioCategory = $('.portfolio__info--category');
+    $(portfolioTitle).dotdotdot({
+        height: 97
+    });
+    $(portfolioCategory).dotdotdot({
+        height: 106
+    });
+    $(portfolioTitle, portfolioCategory).dotdotdot({
+        fallbackToLetter: true,
+        watch: true
     });
 }

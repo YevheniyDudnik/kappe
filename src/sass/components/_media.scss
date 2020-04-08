@@ -46,9 +46,12 @@
             width: 90px,
             height: 90px
         ));
-        @include transition(width height);
+        @include transition(width height box-shadow);
 
         &--wrapper-inner {
+            @include rem((
+                margin-top: 90px
+            ));
             @include transition(transform);
 
             transform: translateX(-100%);
@@ -57,7 +60,7 @@
         &--open {
             @include rem((
                 max-width: $max-width-header,
-                box-shadow: $box-shadow
+                box-shadow: 0 121px 51px 0 $black-and-opacity-6
             ));
 
             width: 100%;
@@ -73,5 +76,32 @@
 
     .burger {
         display: flex;
+    }
+
+    .portfolio {
+        @include rem((
+            margin-top: 90px
+        ));
+
+        width: 100% !important;
+
+        &__item {
+            max-width: 100%;
+        }
+    }
+
+    .content {
+        &::after {
+            @include rem((
+                height: 90px
+            ));
+
+            position: fixed;
+            top: 0;
+            display: block;
+            width: 100%;
+            content: '';
+            background-color: $black-and-opacity-6;
+        }
     }
 }
