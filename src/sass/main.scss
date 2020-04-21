@@ -13,11 +13,13 @@
     'components/filter',
     'components/social-icons',
     'components/copyright',
-    'components/portfolio',
     'components/quick-contact-info',
+    'components/older-posts',
     'components/media';
 @import
+    'layout/wrapper',
     'layout/header',
     'layout/content';
 @import
-    'pages/home';
+    'pages/portfolio',
+    'pages/blog';

@@ -2,21 +2,153 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: $tenth-color;
+}
+
+h4 {
+    &[class*='__info'] {
+        @include rem((
+            font-size: 24px,
+            line-height: 30px
+        ));
+
+        font-family: $main-font;
+        color: $first-color;
+        text-align: center;
+    }
+
+    &[class^='aside'] {
+        @include rem((
+            font-size: 21px,
+            line-height: 26px
+        ));
+
+        font-family: $main-font;
+        color: $first-color;
+    }
+
+    &[class^='quote'] {
+        @include rem((
+            font-size: 21px,
+            line-height: 26px
+        ));
+
+        font-family: $fourth-font;
+        color: $first-color;
+    }
 }
 
 h5 {
-    @include rem((
-        font-size: 19px,
-        line-height: 32px,
-        text-shadow: $text-shadow
-    ));
+    &[class^='filter'] {
+        @include rem((
+            font-size: 19px,
+            line-height: 32px,
+            text-shadow: $text-shadow
+        ));
 
-    font-family: $secondary-font;
-    color: $third-color;
+        font-family: $secondary-font;
+        color: $third-color;
+    }
+}
+
+h6 {
+    &[class^='gallery'], &[class^='video'], &[class^='standard'] {
+        @include rem((
+            font-size: 18px,
+            line-height: 26px
+        ));
+
+        font-family: $main-font;
+        color: $second-color;
+    }
+
+    &[class^='reference'] {
+        @include rem((
+            font-size: 18px,
+            line-height: 20px
+        ));
+
+        font-family: $main-font;
+        color: $first-color;
+    }
+}
+
+p {
+    &[class*='__info'] {
+        @include rem((
+            font-size: 12px,
+            line-height: 30px
+        ));
+
+        font-family: $main-font;
+        color: $first-color;
+        text-align: center;
+    }
+
+    &[class^='copyright'] {
+        @include rem((
+            font-size: 12px,
+            line-height: 25px
+        ));
+
+        font-family: $secondary-font;
+        color: $fourth-color;
+    }
+
+    &[class^='gallery'], &[class^='video'], &[class^='standard'] {
+        @include rem((
+            font-size: 13px,
+            line-height: 22px
+        ));
+
+        font-family: $main-font;
+        color: $fourteenth-color;
+    }
+
+    &[class*='__comments'], &[class*='__publication-date'] {
+        @include rem((
+            font-size: 13px,
+            line-height: 22px
+        ));
+
+        font-family: $main-font;
+        color: $thirteenth-color;
+    }
+
+    &[class^='aside'] {
+        @include rem((
+            font-size: 14px,
+            line-height: 24px
+        ));
+
+        font-family: $main-font;
+        color: $fourteenth-color;
+    }
+
+    &[class^='quote'] {
+        @include rem((
+            font-size: 18px,
+            line-height: 26px
+        ));
+
+        font-family: $main-font;
+        color: $third-color;
+    }
 }
 
 a {
     text-decoration: none;
+
+    &[class^='reference'] {
+        @include rem((
+            font-size: 14px,
+            line-height: 22px
+        ));
+
+        font-family: $third-font;
+        color: $first-color;
+        text-decoration: underline;
+    }
 }
 
 .img {
@@ -28,7 +160,7 @@ a {
 ul {
     &[class^='navigation'], &[class^='filter'] {
         & a {
-            &[class*='link'] {
+            &[class*='__link'] {
                 @include rem((
                     text-shadow: $text-shadow
                 ));
@@ -40,7 +172,7 @@ ul {
 
     &[class^='navigation'] {
         & a {
-            &[class*='link'] {
+            &[class*='__link'] {
                 @include rem((
                     font-size: 18px,
                     line-height: 32px,
@@ -54,7 +186,7 @@ ul {
 
     &[class^='filter'] {
         & a {
-            &[class*='link'] {
+            &[class*='__link'] {
                 @include rem((
                     font-size: 13px,
                     line-height: 24px,
@@ -63,22 +195,10 @@ ul {
 
                 color: $fourth-color;
 
-                &:hover, &[class$='active'] {
+                &:hover, &[class$='--active'] {
                     color: $first-color;
                 }
             }
         }
-    }
-}
-
-p {
-    &[class^='copyright'] {
-        @include rem((
-            font-size: 12px,
-            line-height: 25px
-        ));
-
-        font-family: $secondary-font;
-        color: $fourth-color;
     }
 }

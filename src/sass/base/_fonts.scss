@@ -25,3 +25,31 @@
     font-weight: 100;
 }
 // -- / Roboto Thin / -- //
+
+// -- Roboto Bold Italic -- //
+@font-face {
+    font-family: 'roboto-bold-italic';
+    src: url('../fonts/roboto/roboto-bolditalic.eot');
+    src: url('../fonts/roboto/roboto-bolditalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/roboto-bolditalic.woff2') format('woff2'),
+        url('../fonts/roboto/roboto-bolditalic.woff') format('woff'),
+        url('../fonts/roboto/roboto-bolditalic.ttf') format('truetype'),
+        url('../fonts/roboto/roboto-bolditalic.svg#roboto-bold-italic') format('svg');
+    font-style: italic;
+    font-weight: 700;
+}
+// -- / Roboto Bold Italic / -- //
+
+// -- Georgia Italic -- //
+@font-face {
+    font-family: 'georgia-italic';
+    src: url('../fonts/georgia/georgia-italic.eot');
+    src: url('../fonts/georgia/georgia-italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/georgia/georgia-italic.woff2') format('woff2'),
+        url('../fonts/georgia/georgia-italic.woff') format('woff'),
+        url('../fonts/georgia/georgia-italic.ttf') format('truetype'),
+        url('../fonts/georgia/georgia-italic.svg#georgia-italic') format('svg');
+    font-style: italic;
+    font-weight: 400;
+}
+// -- / Georgia Italic / -- //

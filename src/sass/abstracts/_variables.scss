@@ -2,6 +2,8 @@ $rem-fallback: true;
 
 $main-font: 'roboto-light', sans-serif;
 $secondary-font: 'roboto-thin', sans-serif;
+$third-font: 'roboto-bold-italic', sans-serif;
+$fourth-font: 'georgia-italic', serif;
 
 $max-width-header: 300px;
 
@@ -20,6 +22,18 @@ $limed-spruce: #364048;
 $outer-space-first: #2f373b;
 $outer-space-second: #1e282b;
 $outer-space-third: #242b2e;
+$silver-sand: #b4b7b8;
+$gray-first: #818181;
+$gray-second: #8f8f8f;
+$dusty-gray-first: #9a9a9a;
+$dusty-gray-second: #9c9c9c;
+$mercury: #e3e3e3;
+$mine-shaft-first: #3b3b3b;
+$mine-shaft-second: #232323;
+$mine-shaft-third: #252525;
+$mine-shaft-fourth: #2b2b2b;
+$silver-chalice: #a9a9a9;
+$iron: #d2d6db;
 
 $black-and-opacity-02: rgba(0, 0, 0, .02);
 $black-and-opacity-1: rgba(0, 0, 0, .1);
@@ -41,6 +55,18 @@ $sixth-color: $limed-spruce;
 $seventh-color: $outer-space-first;
 $eighth-color: $outer-space-second;
 $ninth-color: $outer-space-third;
+$tenth-color: $silver-sand;
+$eleventh-color: $gray-first;
+$twelfth-color: $gray-second;
+$thirteenth-color: $dusty-gray-first;
+$fourteenth-color: $dusty-gray-second;
+$fifteenth-color: $mercury;
+$sixteenth-color: $mine-shaft-first;
+$seventeenth-color: $mine-shaft-second;
+$eighteenth-color: $mine-shaft-third;
+$nineteenth-color: $mine-shaft-fourth;
+$twentieth-color: $silver-chalice;
+$twenty-first-color: $iron;
 
 $text-shadow: 1px 1px 4px $black-and-opacity-2;
 

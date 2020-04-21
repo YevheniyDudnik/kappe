@@ -1,0 +1,16 @@
+.older-posts {
+    @include rem((
+        padding: 17px 28px,
+        font-size: 20px,
+        line-height: 30.73px
+    ));
+
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    margin: 0 auto;
+    font-family: $secondary-font;
+    color: $first-color;
+    text-transform: uppercase;
+    background-color: #1ab5b3;
+}

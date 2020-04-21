@@ -79,14 +79,10 @@
     }
 
     .portfolio {
-        @include rem((
-            margin-top: 90px
-        ));
-
         width: 100% !important;
 
         &__item {
-            max-width: 100%;
+            max-width: 100% !important;
         }
     }
 
@@ -102,6 +98,12 @@
             width: 100%;
             content: '';
             background-color: $black-and-opacity-6;
+        }
+
+        &--wrapper-inner {
+            @include rem((
+                margin: 90px auto 39px !important
+            ));
         }
     }
 }

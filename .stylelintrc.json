@@ -1,6 +1,6 @@
 {
     "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
-    "ignoreFiles": ["src/sass/font-awesome.scss", "src/sass/abstracts/_rem.scss", "src/sass/base/_normalize&reset.scss", "src/sass/abstracts/_transition.scss"],
+    "ignoreFiles": ["src/sass/font-awesome.scss", "src/sass/slick.scss", "src/sass/abstracts/_rem.scss", "src/sass/base/_normalize&reset.scss", "src/sass/abstracts/_transition.scss"],
     "rules": {
         "indentation": 4,
         "at-rule-no-unknown": [true, {

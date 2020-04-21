@@ -1,8 +1,12 @@
 $(document).ready(function() {
     openBurgerMobile();
-    initHolderBgPortfolio('.portfolio');
+    initDots('.portfolio__info--title, .portfolio__info--category, [class $= "__description--text"]', 3, 0);
+    initDots('.reference-post__title, .aside-post__text', 2, 0);
+    initDots('[class $= "__description--title"], .reference-post__link, .aside-post__title', 1, 0);
+    initHolderBg('.portfolio, .blog');
     filterPortfolio();
-    dotPortfolioInfo();
+    filterBlog();
+    carousel('.gallery-post__carousel');
 });
 
 $(window).resize(function() {
@@ -31,14 +35,77 @@ function resizeWindow() {
     }
 }
 
-function initHolderBgPortfolio(element) {
+function filterPortfolio() {
+    var $portfolio = $('.portfolio').isotope({
+        itemSelector: '.portfolio__item',
+        layoutMode: 'masonry',
+        transitionDuration: '0.5s',
+        masonry: {
+            columnWidth: 405,
+            fitWidth: true
+        }
+    });
+    $('.filter__list').on( 'click', 'a', function() {
+        var filterValue = $( this ).attr('data-filter');
+        $portfolio.isotope({ filter: filterValue });
+    });
+    $('.filter__group').each( function( i, filterGroup ) {
+        var $filterGroup = $( filterGroup );
+        $filterGroup.on( 'click', 'a', function() {
+            $filterGroup.find('.filter__link--active').removeClass('filter__link--active');
+            $( this ).addClass('filter__link--active');
+        });
+    });
+}
+
+function filterBlog() {
+    var $blog = $('.blog').isotope({
+        itemSelector: '.blog__item',
+        layoutMode: 'masonry',
+        transitionDuration: '0.5s',
+        masonry: {
+            columnWidth: 294,
+            fitWidth: true,
+            gutter: 25,
+            horizontalOrder: true
+        }
+    });
+    $('.filter__list').on( 'click', 'a', function() {
+        var filterValue = $( this ).attr('data-filter');
+        $blog.isotope({ filter: filterValue });
+    });
+    $('.filter__group').each( function( i, filterGroup ) {
+        var $filterGroup = $( filterGroup );
+        $filterGroup.on( 'click', 'a', function() {
+            $filterGroup.find('.filter__link--active').removeClass('filter__link--active');
+            $( this ).addClass('filter__link--active');
+        });
+    });
+}
+
+function carousel(element) {
+    "use strict";
+    var slider = $(element);
+    $(slider).slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        draggable: false,
+        nextArrow: '<i class="fas fa-angle-right slick-next slick-arrow"></i>',
+        prevArrow: '<i class="fas fa-angle-left slick-prev slick-arrow"></i>',
+        speed: 500
+    });
+}
+
+function initHolderBg(element) {
     "use strict";
     var elementWrap = $(element),
-        elementItem = elementWrap.find('.portfolio__item');
+        elementItem = elementWrap.find('[class *= "item"]');
         elementItem.each(function() {
             var cur = $(this),
-                curImage = cur.find('.portfolio--wrapper-inner'),
-                img = curImage.find('.portfolio__img'),
+                curImage = cur.find('[class *= "wrapper-inner"]'),
+                img = curImage.find('[class *= "img"]'),
                 imgSrc = img.attr('src');
             if (!!curImage.length && !!img.length && !!imgSrc) {
                 curImage.css({
@@ -52,43 +119,19 @@ function initHolderBgPortfolio(element) {
     });
 }
 
-function filterPortfolio() {
-    // init Isotope
-    var $portfolio = $('.portfolio').isotope({
-        itemSelector: '.portfolio__item',
-        layoutMode: 'masonry',
-        transitionDuration: '0.5s',
-        masonry: {
-            columnWidth: 405,
-            fitWidth: true
-        }
-    });
-    // bind filter link click
-    $('.filter__list').on( 'click', 'a', function() {
-        var filterValue = $( this ).attr('data-filter');
-        $portfolio.isotope({ filter: filterValue });
-    });
-    // change active class on links
-    $('.filter__group').each( function( i, filterGroup ) {
-        var $filterGroup = $( filterGroup );
-        $filterGroup.on( 'click', 'a', function() {
-            $filterGroup.find('.filter__link--active').removeClass('filter__link--active');
-            $( this ).addClass('filter__link--active');
-        });
-    });
-}
-
-function dotPortfolioInfo() {
-    let portfolioTitle = $('.portfolio__info--title');
-    let portfolioCategory = $('.portfolio__info--category');
-    $(portfolioTitle).dotdotdot({
-        height: 97
-    });
-    $(portfolioCategory).dotdotdot({
-        height: 106
-    });
-    $(portfolioTitle, portfolioCategory).dotdotdot({
-        fallbackToLetter: true,
-        watch: true
-    });
+function initDots(element, line, tolerance) {
+	'use strict';
+	var elementWrap = $(element);
+	elementWrap.each(function () {
+		var lines = line,
+			holder = $(this),
+            textLH = parseInt(holder.css('line-height')),
+            textH = parseInt(holder.height()),
+            textInnerH = parseInt(holder.innerHeight()),
+            maxH = (textLH * (lines + 1)) + (textInnerH - textH);
+		holder.css({ maxHeight: maxH }).dotdotdot({
+            tolerance: tolerance,
+            watch: true
+		});
+	});
 }

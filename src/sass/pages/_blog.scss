@@ -1,0 +1,327 @@
+.blog {
+    @include rem((
+        padding: 25px 0,
+        margin: 0 auto 39px
+    ));
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+
+    &__item {
+        @include rem((
+            max-width: 294px,
+            margin-bottom: 25px
+        ));
+
+        width: 100%;
+    }
+}
+
+.gallery-post {
+    &__carousel {
+        display: flex;
+        align-items: center;
+
+        & .slick {
+            &-list {
+                flex-grow: 1;
+            }
+
+            &-arrow {
+                @include rem((
+                    font-size: 17px,
+                    max-width: 43px,
+                    max-height: 43px
+                ));
+
+                position: absolute;
+                z-index: 5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                color: $first-color;
+                cursor: pointer;
+                background-color: $third-color;
+            }
+
+            &-prev {
+                left: 0;
+            }
+
+            &-next {
+                right: 0;
+            }
+
+            &-prev, &-next {
+                @include transition(transform);
+
+                &:hover {
+                    transform: scale(.9, .9);
+                }
+            }
+        }
+    }
+
+    &--first {
+        & .gallery-post__carousel--wrapper-inner {
+            @include rem((
+                height: 230px
+            ));
+        }
+    }
+
+    &--second {
+        & .gallery-post__carousel--wrapper-inner {
+            @include rem((
+                height: 265px
+            ));
+        }
+    }
+}
+
+.info {
+    &__comments, &__publication-date {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &:not(:last-child) {
+            @include rem((
+                margin-right: 19px
+            ));
+        }
+
+        &--icon {
+            @include rem((
+                margin-right: 8px,
+                font-size: 14px,
+                line-height: 22px
+            ));
+
+            color: $eleventh-color;
+        }
+    }
+}
+
+.image-post {
+    &__item {
+        height: 100%;
+    }
+
+    &--wrapper-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__link {
+        @include rem((
+            max-width: 59px,
+            max-height: 59px
+        ));
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: $first-color;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    &__icon {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &--animation {
+        @include rem((
+            height: 262px
+        ));
+    }
+
+    &--img {
+        @include rem((
+            height: 262px
+        ));
+    }
+}
+
+.reference-post {
+    @include rem((
+        padding: 33px 28px
+    ));
+
+    text-align: center;
+    background-color: $third-color;
+
+    &__title {
+        @include rem((
+            padding-bottom: 9px
+        ));
+    }
+}
+
+.video-post {
+    &__player {
+        display: flex;
+        width: 100%;
+    }
+
+    &--first {
+        & .video-post__player {
+            @include rem((
+                height: 226px
+            ));
+        }
+    }
+
+    &--second {
+        & .video-post__player {
+            @include rem((
+                height: 210px
+            ));
+        }
+    }
+}
+
+.standard-post {
+    &--first {
+        & .standard-post--wrapper-inner {
+            @include rem((
+                height: 141px
+            ));
+        }
+    }
+
+    &--second {
+        & .standard-post--wrapper-inner {
+            @include rem((
+                height: 316px
+            ));
+        }
+    }
+
+    &--third {
+        & .standard-post--wrapper-inner {
+            @include rem((
+                height: 141px
+            ));
+        }
+    }
+
+    &--fourth {
+        & .standard-post--wrapper-inner {
+            @include rem((
+                height: 141px
+            ));
+        }
+    }
+}
+
+.gallery-post, .video-post, .standard-post {
+    &__description {
+        @include rem((
+            padding: 20px
+        ));
+
+        display: flex;
+        flex-direction: column;
+        background-color: $first-color;
+
+        &--title {
+            @include rem((
+                padding-bottom: 13px
+            ));
+        }
+
+        &--text {
+            @include rem((
+                padding-bottom: 20px,
+                margin-bottom: 19px
+            ));
+
+            position: relative;
+
+            &::after {
+                @include rem((
+                    right: -20px,
+                    left: -20px,
+                    height: 1px
+                ));
+
+                position: absolute;
+                bottom: 0;
+                display: block;
+                content: '';
+                background-color: $fifteenth-color;
+            }
+        }
+
+        &--info {
+            display: flex;
+        }
+    }
+}
+
+.aside-post {
+    @include rem((
+        padding: 24px,
+        border-left: 15px solid $third-color
+    ));
+
+    display: flex;
+    background-color: $ninth-color;
+
+    &__title {
+        @include rem((
+            padding-bottom: 16px
+        ));
+    }
+}
+
+.quote-post {
+    @include rem((
+        padding: 35px 28px
+    ));
+
+    display: flex;
+    text-align: center;
+    background-color: $ninth-color;
+
+    &__text {
+        @include rem((
+            padding-bottom: 31px
+        ));
+    }
+
+    &__autor {
+        @include rem((
+            padding-top: 26px
+        ));
+
+        position: relative;
+
+        &::before {
+            @include rem((
+                font-size: 63px,
+                line-height: 26px
+            ));
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            display: block;
+            margin: 0 auto;
+            font-family: $fourth-font;
+            content: '\201c';
+        }
+    }
+}
